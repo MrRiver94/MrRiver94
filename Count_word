@@ -1,0 +1,40 @@
+-#Definimos una funcion que hará el conteo de las palabras.
+def count_text(text):
+#Utilizamos .split() para separar los str y convertirlos en una lista. 
+    text=text.split()
+#creamos la variable word para ir guardando las palabras que se repitan.    
+    word={}
+#creamos un bucle for para ir haciendo bucles y cada dez que i está en word, esta se guerda sumandose a a la variable vacia word con +=1    
+    for i in text:
+        if i in word:
+            word[i]+=1
+            print(word[i])
+        else:
+            word[i]=1
+#pedimos que nos devuelva la variable word            
+            
+    return word        
+
+
+text= " la tienda es la casa de Juan "
+
+count_text(text)
+#creamos una función donde seleccione la  palabramás repetida
+
+def most_repeated(word):
+
+#Aquí guardaremos la lapabra que se repite más y las veces que se repite en int
+
+    max_word= " "
+    max_freq=0
+#bucle for para dar vueltas y seleccionar parametros. con word.items() lo que hace es devolvernos una clave y un valor  
+    for word, freq in word.items():
+        print( word,":" , freq )
+#Aquí queremos comporbar ver las veces que se repite la palabra y guardar la max        
+        if freq > max_freq:
+            max_word = word
+            max_freq = freq
+#pedimos que nos devuelva la oalabra que más se repite y las veces que se repite            
+    return max_word, max_freq
+
+most_repeated(count_text(text))
