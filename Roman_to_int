@@ -1,0 +1,28 @@
+table= {"I": 1, "V":5 , "X":10, "L":50, "C":100, "D":500, "M":1000}
+
+
+#Esta función nos permite pasar de números romanos a enteros
+def roma_to_int(str):
+
+ #Almacenamos los numeros en result para que vayan operando   
+    
+    result=0
+  
+ #Creamos un buble for para ir interando la i en el rango del str. Le colocamos el -1 para que empiece por el final y pare el bucle, pues tenemos i+1 que loopeara sin parar. con -1 le marcamos el final
+    for i in range(len(str)-1):
+        
+        print(range(len(str)-1))
+        
+        print (str[i])
+ #Aquí tenemos las operaciones. La primera es la condicion de la resta ej: le explicamos que si encuentra IV es una resta. Las leyes romanas son asi I=1 V=5 IV= 4       
+        if table[str[i]]< table[str[i+1]]:
+            result -= table[str[i]]
+        else:
+            result+=table[str[i]]
+     #A resultado se le suma el ultimo valor que seria "I":1  Consejo: Mira variable numero_romano y lo verás.     
+    return result + table[str[-1]]        
+
+
+numero_romano = "MD"
+numero_entero= roma_to_int(numero_romano)
+print(numero_entero)
